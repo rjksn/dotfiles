@@ -1,0 +1,68 @@
+
+chrome(){
+   /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --incognito --app=https://google.com
+}
+
+releases() {
+  for d in releases/* ; do
+    < $d/.commit_hash
+  done
+}
+
+gitpush() {
+  #do things with parameters like $1 such as
+  git add .
+  git commit -am "$1"
+  git push
+}
+
+gittag() {
+  git tag $1
+  git push origin $1
+}
+
+site() {
+  cd ~/sites/$1
+}
+
+
+# PHP Tools
+
+alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
+
+art() {
+  if [ -e artisan ]
+  then
+    php artisan $1 $2 $3
+  else
+    echo -e "\033[38;5;220mPlease run this in a Laravel project root folder.\033[00m"
+  fi
+}
+
+artmi() {
+  php artisan migrate
+}
+
+alias ..='cd ..'
+alias cd..='cd ..'
+alias cdsage="cd web/app/themes/*"
+alias cdunsage="cd ../../../.."
+
+
+# some more ls aliases
+alias ll='ls -alF'
+alias ls='ls -GFh'
+alias la='ls -A'
+alias l='ls -CF'
+
+alias gs='git status'
+alias gc='git commit'
+alias gd='git diff'
+alias ga='git add'
+alias gf='git flow'
+alias gff='git flow feature'
+alias gfr='git flow release'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
