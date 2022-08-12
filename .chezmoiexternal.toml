@@ -10,6 +10,12 @@
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
+[".vim/bundle/Vundle.vim"]
+    type = "archive"
+    url = "https://github.com/VundleVim/Vundle.vim/archive/master.zip"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
 [".vim/colors/solarized.vim"]
     type = "file"
     url = "https://raw.githubusercontent.com/altercation/solarized/master/vim-colors-solarized/colors/solarized.vim"
