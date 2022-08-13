@@ -8,3 +8,5 @@
 	email = ryan@rjackson.ca
 [init]
 	defaultBranch = main
+[core]
+	excludesfile = ~/.gitignore
