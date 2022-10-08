@@ -1,12 +1,7 @@
 
-chrome(){
-   /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --incognito --app=https://google.com
-}
-
-releases() {
-  for d in releases/* ; do
-    < $d/.commit_hash
-  done
+# Convert timestamps to human
+ts() {
+  date -r "${1:0:10}"
 }
 
 gitpush() {
